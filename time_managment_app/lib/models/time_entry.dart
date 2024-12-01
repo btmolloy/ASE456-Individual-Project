@@ -1,8 +1,8 @@
 class TimeEntry {
-  final String id;
-  final String date; // Format: YYYY/MM/DD
-  final String from; // Format: HH:MM AM/PM
-  final String to; // Format: HH:MM AM/PM
+  final String id; // Firestore document ID
+  final String date;
+  final String from;
+  final String to;
   final String task;
   final String tag;
 
@@ -15,25 +15,26 @@ class TimeEntry {
     required this.tag,
   });
 
+  // Factory method to create a TimeEntry from Firestore data
+  factory TimeEntry.fromMap(Map<String, dynamic> data, String id) {
+    return TimeEntry(
+      id: id, // Pass Firestore document ID here
+      date: data['date'] as String,
+      from: data['from'] as String,
+      to: data['to'] as String,
+      task: data['task'] as String,
+      tag: data['tag'] as String,
+    );
+  }
+
+  // Convert a TimeEntry to a Firestore document
   Map<String, dynamic> toMap() {
     return {
-      'id': id,
       'date': date,
       'from': from,
       'to': to,
       'task': task,
       'tag': tag,
     };
-  }
-
-  static TimeEntry fromMap(Map<String, dynamic> map) {
-    return TimeEntry(
-      id: map['id'],
-      date: map['date'],
-      from: map['from'],
-      to: map['to'],
-      task: map['task'],
-      tag: map['tag'],
-    );
   }
 }

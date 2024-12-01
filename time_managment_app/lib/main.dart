@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'screens/home_screens.dart'; // Correctly import the HomeScreen file
+import 'firebase_options.dart'; // Import the Firebase options
+import 'screens/home_screens.dart'; // Import the HomeScreen
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(); // Ensure Firebase is initialized
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform, // Use Firebase options
+  );
   runApp(MyApp());
 }
 
@@ -13,11 +16,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Personal Time Manager',
-      debugShowCheckedModeBanner: false, // Remove the debug banner
-      theme: ThemeData(
-        primarySwatch: Colors.blue, // Define a primary theme color
-      ),
-      home: HomeScreen(), // Set the HomeScreen as the default starting page
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomeScreen(), // Load the HomeScreen as the main screen
     );
   }
 }
