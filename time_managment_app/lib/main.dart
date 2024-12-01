@@ -1,24 +1,46 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart'; // Import the Firebase options
-import 'screens/home_screens.dart'; // Import the HomeScreen
+import 'firebase_options.dart';
+import 'screens/home_screens.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform, // Use Firebase options
-  );
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Personal Time Manager',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: HomeScreen(), // Load the HomeScreen as the main screen
+    return FutureBuilder(
+      future: _initialization,
+      builder: (context, snapshot) {
+        // Show a loading screen while Firebase initializes.
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return MaterialApp(
+            home: Scaffold(
+              body: Center(child: CircularProgressIndicator()),
+            ),
+          );
+        }
+        // Show the app once Firebase initializes.
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp(
+            title: 'Personal Time Manager',
+            debugShowCheckedModeBanner: false,
+            theme: ThemeData(primarySwatch: Colors.blue),
+            home: HomeScreen(),
+          );
+        }
+        // Show an error if Firebase fails to initialize.
+        return MaterialApp(
+          home: Scaffold(
+            body: Center(child: Text('Failed to initialize Firebase')),
+          ),
+        );
+      },
     );
   }
 }
