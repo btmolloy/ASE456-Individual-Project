@@ -18,13 +18,22 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
   Map<String, Duration> _tagReport = {};
   bool _isLoading = false;
 
-  // Search for tasks by query
+  /// Search for tasks by query (supports tag, date, and task name)
   void _searchTasks(String query) async {
     setState(() => _isLoading = true);
 
     try {
       List<TimeEntry> allTasks = await _firebaseService.getAllTasks();
-      List<TimeEntry> results = filterTasksByQuery(allTasks, query);
+
+      // Filter tasks by query (tag, date, or task name)
+      List<TimeEntry> results = allTasks.where((task) {
+        final lowerQuery = query.toLowerCase();
+        return task.task.toLowerCase().contains(lowerQuery) ||
+            task.tag.toLowerCase().contains(lowerQuery) ||
+            task.date.contains(query); // Date matching is exact
+      }).toList();
+
+      // Sort results by date and time
       results = sortTasksByDateTime(results);
 
       setState(() {
@@ -38,7 +47,7 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
     }
   }
 
-  // Filter tasks by date range
+  /// Filter tasks by date range
   void _searchByDateRange() async {
     setState(() => _isLoading = true);
 
@@ -63,6 +72,7 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
         }
       }).toList();
 
+      // Sort results by date and time
       results = sortTasksByDateTime(results);
 
       setState(() {
@@ -76,7 +86,7 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
     }
   }
 
-  // Generate report
+  /// Generate report for total time spent per tag
   void _generateReport() async {
     setState(() => _isLoading = true);
 
@@ -99,7 +109,7 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
     }
   }
 
-  // Delete a task
+  /// Delete a task
   Future<void> _deleteTask(String taskId) async {
     final confirm = await showDialog(
       context: context,
@@ -295,7 +305,7 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
                 children: [
                   Text(task.tag, style: TextStyle(color: Colors.white)),
                   IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red),
+                    icon: Icon(Icons.delete, color: Colors.red[200]),
                     onPressed: () => _deleteTask(task.id),
                   ),
                 ],
@@ -316,9 +326,16 @@ class _QueryReportScreenState extends State<QueryReportScreen> {
           final tag = _tagReport.keys.elementAt(index);
           final duration = _tagReport[tag]!;
           return Card(
+            color: Colors.blue, // Blue background for the card
             child: ListTile(
-              title: Text(tag),
-              subtitle: Text('Total Time: ${_formatDuration(duration)}'),
+              title: Text(
+                tag,
+                style: TextStyle(color: Colors.white), // White text
+              ),
+              subtitle: Text(
+                'Total Time: ${_formatDuration(duration)}',
+                style: TextStyle(color: Colors.white), // White text
+              ),
             ),
           );
         },

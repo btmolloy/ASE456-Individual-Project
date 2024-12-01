@@ -130,7 +130,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
         majorGridLines: MajorGridLines(width: 0), // Removes grid lines
       ),
       primaryYAxis: NumericAxis(
-        labelFormat: '{value} minutes',
+        labelFormat: '{value}',
         labelStyle: TextStyle(color: Colors.blue),
         majorGridLines: MajorGridLines(width: 1),
       ),
