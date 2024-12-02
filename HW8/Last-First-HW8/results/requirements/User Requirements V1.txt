@@ -1,0 +1,18 @@
+Task Recording
+
+- As a user, I want to input data in the format DATE, FROM, TO, TASK, TAG (e.g., today 09:30 10:30 studied Java STUDY) to create a new record and save it to the database.
+
+Task Display and Prioritization
+
+- As a user, I want to see the top five upcoming tasks on the home screen, so I can quickly identify what’s next.
+- As a user, I want the upcoming tasks to be organized by start time, ensuring the soonest tasks appear first.
+
+Task Querying
+
+- As a user, I want to input a specific date and see all activities that occurred on that day.
+- As a user, I want to input a task name and retrieve all activities related to that task.
+- As a user, I want to input a tag and see all activities associated with that tag.
+- As a user, I want to query tasks by a start and end date to view all activities that fall within that range.
+
+
+
