@@ -40,6 +40,11 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
 - schedule
     - Project Schedule.pdf
 - tests
+    - Unit Tests
+    - Acceptance Tests
+    - Integration Tests
+    - Regression Tests
+
 
 <hr>
 
