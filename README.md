@@ -5,14 +5,39 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
 
 **Results Directory Structure**
 - Canvas
-    - Test
+    - Canvas Page PDF
 - code
+    - Prototype
+          - Lib
+          - pubsec.yaml
+    - Ver1
+          - Lib
+          - pubsec.yaml
+    - Ver2
+          - Lib
+          - pubsec.yaml
 - design
+    - ver1
+        - UML Design V1
+    - ver2
+        - UML Design V1
 - documents
+    - Code Refactor Documents
+    - Presentation
+    - User Manuals
 - github
+    - final
+    - prototype
+    - ver1
 - progress
+      - 2024_10_20.json
+      - 2024_11_10.json
+      - 2024_11_29.json
 - requirements
+    - User Requirements V1.txt
+    - User Requirements V2.txt
 - schedule
+    - Project Schedule.pdf
 - tests
 
 
