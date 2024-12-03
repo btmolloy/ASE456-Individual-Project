@@ -1,0 +1,23 @@
+{
+  "header" : {
+    "cloc_url"           : "github.com/AlDanial/cloc",
+    "cloc_version"       : "2.02",
+    "elapsed_seconds"    : 0.0192892364510128,
+    "n_files"            : 9,
+    "n_lines"            : 1189,
+    "files_per_second"   : 113.872301574907,
+    "lines_per_second"   : 24540.982461143
+  },
+  "Dart" : {
+    "nFiles": 9,
+    "blank": 210,
+    "comment": 17,
+    "code": 962
+  },
+  "SUM": {
+    "blank": 210,
+    "comment": 17,
+    "code": 962,
+    "nFiles": 9
+  }
+}
