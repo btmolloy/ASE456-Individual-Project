@@ -5,7 +5,7 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
 
 **Results Directory Structure**
 - Canvas
--   Test
+    - Test
 - code
 - design
 - documents
