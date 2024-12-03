@@ -2,6 +2,20 @@
 
 Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, manage time, and analyze productivity effortlessly. Designed with a clean UI and powerful features, this application simplifies task management and enhances your daily workflow.
 
+
+**Results Directory Structure**
+- Canvas
+-   Test
+- code
+- design
+- documents
+- github
+- progress
+- requirements
+- schedule
+- tests
+
+
 **🚀 Features**
 - Upcoming Events: View your next 5 tasks at a glance.
 - Add Tasks: Easily add tasks with custom tags, times, and dates.
@@ -21,3 +35,4 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
 - Codebase: Written in Flutter for cross-platform compatibility.
 - Firebase Integration: Seamless data storage and synchronization.
 - UI/UX Focused: Clean and engaging layouts for better usability.
+
