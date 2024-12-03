@@ -2,7 +2,7 @@
 
 Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, manage time, and analyze productivity effortlessly. Designed with a clean UI and powerful features, this application simplifies task management and enhances your daily workflow.
 
-
+<hr>
 **Results Directory Structure**
 - Canvas
     - Canvas Page PDF
@@ -40,6 +40,7 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
     - Project Schedule.pdf
 - tests
 
+<hr>
 
 **🚀 Features**
 - Upcoming Events: View your next 5 tasks at a glance.
