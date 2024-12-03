@@ -17,6 +17,6 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
 - User-Friendly: Built for ease with a sleek and responsive design.
 
 **📂 Project Highlights**
-Codebase: Written in Flutter for cross-platform compatibility.
-Firebase Integration: Seamless data storage and synchronization.
-UI/UX Focused: Clean and engaging layouts for better usability.
+- Codebase: Written in Flutter for cross-platform compatibility.
+- Firebase Integration: Seamless data storage and synchronization.
+- UI/UX Focused: Clean and engaging layouts for better usability.
