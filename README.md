@@ -1,4 +1,5 @@
-**📅 Personal Time Manager**
+**📅 Personal Time Manager
+**
 Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, manage time, and analyze productivity effortlessly. Designed with a clean UI and powerful features, this application simplifies task management and enhances your daily workflow.
 
 **🚀 Features**
