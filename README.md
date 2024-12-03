@@ -30,9 +30,9 @@ Welcome to Personal Time Manager, your ultimate tool to keep track of tasks, man
     - prototype
     - ver1
 - progress
-      - 2024_10_20.json
-      - 2024_11_10.json
-      - 2024_11_29.json
+    - 2024_10_20.json
+    - 2024_11_10.json
+    - 2024_11_29.json
 - requirements
     - User Requirements V1.txt
     - User Requirements V2.txt
